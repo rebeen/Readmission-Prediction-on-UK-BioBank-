@@ -121,7 +121,7 @@ def SSL_method(demo,diag,scripts,LTC):
 
     diag_input = Input(shape=(diag,), name='diag_input')
     diag_embed = Embedding(1306, 100, input_length=10)(diag_input)
-    diag_output = Dense(1600, activation='relu')(diag_input)
+    diag_output = Dense(1600, activation='relu')(diag_embed)
     diag_output = Dropout(0.4)(diag_output)
     diag_output = BatchNormalization()(diag_output)
     diag_output = LayerNormalization()(diag_output)
@@ -134,7 +134,7 @@ def SSL_method(demo,diag,scripts,LTC):
 
     ltc_input = Input(shape=(LTC,), name='ltc_input')
     ltc_embed = Embedding(202, 100, input_length=15, name='ltc_embed')(ltc_input)
-    ltc_output= Dense(204, activation='relu')(ltc_input)
+    ltc_output= Dense(204, activation='relu')(ltc_embed)
     ltc_output = Dropout(0.4)(ltc_output)
     ltc_output = BatchNormalization()(ltc_output)
     ltc_output = LayerNormalization()(ltc_output)
