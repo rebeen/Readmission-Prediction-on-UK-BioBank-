@@ -36,9 +36,6 @@ Lon_term_condition['eid'] =Lon_term_condition ['eid'].astype('int')
 Lon_term_condition.set_index('eid', inplace=True)
 
 
-Age_at_event = pd.read_csv("/home/wasim/wasim_data/14_08_23_Readdmision/final_readmission_dataset/Corrected_readmission_data_rerun_models/including_10_100_patients/Age_at_LTC_event_padded_zeros.tsv", header=0, sep='\t')
-Age_at_event['eid'] =Age_at_event ['eid'].astype('int')
-Age_at_event.set_index('eid', inplace=True)
 
 
 
@@ -46,8 +43,8 @@ df1 = pd.merge(Read_table,demographics, on="eid",  how="left")
 df2 =  pd.merge(df1,diagnosis, on="eid",  how="left")
 df3 = pd.merge(df2, prescription, on="eid",  how="left")
 df4 = pd.merge(df3, Lon_term_condition, on="eid",  how="left")
-df5 = pd.merge(df4, Age_at_event, on="eid",  how="left")
-readmission_dataset=df5
+
+readmission_dataset=df4
 
 readmission_dataset=readmission_dataset.fillna(0) # remove NAs due to merging
 
@@ -61,14 +58,12 @@ demo_train=readmission_train.loc[:,['Sex', 'Year_of_birth', 'Townsend_deprivatio
 LTC_train=readmission_train.loc[:,"cystic_renal":"downs"].values
 diag_train=readmission_train.loc[:,"M201":"C944"].values # M201:C944 starting code of all_top_codes dataset. K810:C07 starting code of 2 year window + all_top_codes dataset
 scripts_train=readmission_train.loc[:,"010101":"050301"].values
-#Age_at_event_train=readmission_train.loc[:,"V1":"V34"].values
 label_train=readmission_train['readmission_status'].values
 
 demo_test=readmission_test.loc[:,['Sex', 'Year_of_birth', 'Townsend_deprivation_index_at_recruitment', 'Alcohol_intake_frequency', 'Smoking_status', 'Alcohol_drinker_status', 'Ethnic_background','Body_mass_index', 'Age_at_recruitment', 'Body_fat_percentage']].values
 LTC_test=readmission_test.loc[:,"cystic_renal":"downs"].values
 diag_test=readmission_test.loc[:,"M201":"C944"].values # M201:C944 starting code of all_top_codes dataset. K810:C07 starting code of 2 year window + all_top_codes dataset
 scripts_test=readmission_test.loc[:,"010101":"050301"].values
-#Age_at_event_test=readmission_test.loc[:,"V1":"V34"].values
 label_test=readmission_test['readmission_status'].values
 
 
@@ -88,13 +83,11 @@ def NN_improved(demographics,diagnosis,scripts,LTC,params={},**kwarg):
     diagnosis_input = Input(shape=(diagnosis,))
     scripts_input = Input(shape=(scripts,))
     LTC_input = Input(shape=(LTC,))
-    #Age_at_event_input = Input(shape=(Age_at_event,))
 
     demographics = demographics_input
     diagnosis = diagnosis_input
     scripts = scripts_input
     LTC = LTC_input
-    #Age_at_event = Age_at_event_input
 
     # GOT RID OF EMBEDDING LAYERS. Use Binary Encodings. There are not sematic meanings between script or LTCs or diagnosis indices for embeddings to capture. Maybe be reducing performance. Embedding layers generally used to capture sematic meanings e.g. between words
     # BUT If the integers are purely categorical and have no meaningful order or relationship, better to use binary encodings 
