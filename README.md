@@ -80,7 +80,13 @@ Readmission_code/
 
 ## 🧬 Data Sources & Modalities
 
-This project integrates four structured data modalities from UK Biobank-derived EHR, all linked via participant ID (`eid`):
+This project uses two large-scale EHR datasets: **UK Biobank** for primary model development and **CPRD (Clinical Practice Research Datalink)** as an independent replication dataset.
+
+---
+
+### 🔬 Dataset 1: UK Biobank *(Primary)*
+
+Large-scale prospective cohort study with ~500,000 UK participants, providing linked primary care, hospital inpatient (HES), and mortality records. All modalities are linked via participant ID (`eid`).
 
 | Modality | Description | Encoding |
 |---|---|---|
@@ -88,6 +94,25 @@ This project integrates four structured data modalities from UK Biobank-derived 
 | **ICD-10 Diagnosis Codes** | Binary-encoded diagnosis history (codes M201–C944 range) | Binary |
 | **Prescription (BNF Codes)** | Binary indicators of prescribed medications (BNF codes 010101–050301 range) | Binary |
 | **Long-Term Conditions (LTC)** | Binary indicators of chronic conditions; multi-morbidity representation | Binary |
+
+> Access requires an approved application via the [UK Biobank Access Management System](https://www.ukbiobank.ac.uk/enable-your-research/apply-for-access).
+
+---
+
+### 🔁 Dataset 2: Clinical Practice Research Datalink — CPRD *(Replication)*
+
+CPRD is a real-world research database of anonymised primary care EHR data from GP practices across the UK, used here to validate the generalisability of models trained on UK Biobank.
+
+| Modality | Description | Encoding |
+|---|---|---|
+| **Demographics** | Age, sex, BMI, smoking status, deprivation index | Continuous / one-hot |
+| **ICD-10 / Read Codes** | Diagnosis history mapped to ICD-10 equivalents | Binary |
+| **Prescription records** | Medication history using BNF / product codes | Binary |
+| **Long-Term Conditions (LTC)** | Chronic condition indicators derived from GP records | Binary |
+
+> Access requires registration and approval via [CPRD](https://www.cprd.com/data-access).
+
+---
 
 ### 🎯 Target Variable
 
