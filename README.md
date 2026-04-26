@@ -34,23 +34,17 @@ The project develops and evaluates multiple predictive modelling approaches usin
 
 ---
 
+## 🖼️ Project Poster
+
+<p align="center">
+  <img src="Readmission_prediction_.png" alt="Project Poster — Predicting Unplanned Hospital Readmissions in People with Multiple Long-Term Conditions" width="700"/>
+</p>
+
+---
+
 ## 👥 Authors
 
-| Name | Affiliation |
-|---|---|
-| **Rebeen Ali Hamad**¹ | Newcastle University, UK |
-| Alisha Angdembe² | University of Birmingham, UK |
-| Amaani B. Hussain³ | University of Nottingham, UK |
-| John Casement⁴ | University Hospitals Birmingham NHS Foundation Trust, UK |
-| Wasim A. Iqbal⁴ | University Hospitals Birmingham NHS Foundation Trust, UK |
-| Christian Atallah⁴ | University Hospitals Birmingham NHS Foundation Trust, UK |
-| Dexter Canoy⁵ | University of Oxford, UK |
-| Rafael Henkin² | University of Birmingham, UK |
-| David Taylor⁶ | Valeo Health, UK |
-| Susan Mountain⁶ | Valeo Health, UK |
-| Michael R. Barnes² | University of Birmingham, UK |
-| Paolo Missier⁷ | King's College London, UK |
-| Nick J. Reynolds³ | University of Nottingham, UK |
+Rebeen Ali Hamad · Alisha Angdembe · Amaani B. Hussain · John Casement · Wasim A. Iqbal · Christian Atallah · Dexter Canoy · Rafael Henkin · David Taylor · Susan Mountain · Michael R. Barnes · Paolo Missier · Nick J. Reynolds
 
 *on behalf of **The AI-MULTIPLY Consortium***
 
