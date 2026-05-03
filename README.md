@@ -21,7 +21,7 @@ This repository contains the complete machine learning and deep learning pipelin
 
 > **"Predicting Unplanned Hospital Readmissions in People with Multiple Long-Term Conditions"**
 
-The project develops and evaluates multiple predictive modelling approaches using large-scale **UK Biobank-derived electronic health record (EHR) data**, integrating demographic, diagnostic, prescription, and long-term condition (LTC) features across five model families — from classical ML to self-supervised representation learning.
+The project develops and evaluates multiple predictive modelling approaches using large-scale **UK Biobank and CPRD (Clinical Practice Research Datalink)-derived electronic health record (EHR) data**, integrating demographic, diagnostic, prescription, and long-term condition (LTC) features across five model families — from classical ML to self-supervised representation learning.
 
 ### Key Features
 
@@ -33,7 +33,10 @@ The project develops and evaluates multiple predictive modelling approaches usin
 - ✅ Evaluation across AUROC, AUPRC, Precision, Recall, and F1
 
 ---
-
+## Overview
+<p align="center">
+  <img src="overview" alt="Project Overview — Predicting Unplanned Hospital Readmissions in People with Multiple Long-Term Conditions" width="700"/>
+</p>
 ## 🖼️ Project Poster
 
 <p align="center">
@@ -80,7 +83,7 @@ Readmission_code/
 
 ## 🧬 Data Sources & Modalities
 
-This project uses two large-scale EHR datasets: **UK Biobank** for primary model development and **CPRD (Clinical Practice Research Datalink)** as an independent replication dataset.
+This project uses two large-scale EHR datasets: **UK Biobank** for primary model development and **CPRD** as an independent replication dataset.
 
 ---
 
