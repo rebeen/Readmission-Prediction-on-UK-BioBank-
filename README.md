@@ -37,6 +37,7 @@ The project develops and evaluates multiple predictive modelling approaches usin
 <p align="center">
   <img src="overview.png" alt="Project Overview — Predicting Unplanned Hospital Readmissions in People with Multiple Long-Term Conditions" width="700"/>
 </p>
+
 ## 🖼️ Project Poster
 
 <p align="center">
